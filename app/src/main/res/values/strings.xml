@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AutoVibe</string>
+    <string name="title_home">Home</string>
+    <string name="title_car_info">Car Info</string>
+    <string name="title_contact_us">Contact Us</string>
+    <string name="current_rpm">Current RPM:</string>
+    <string name="simulated_car">Simulated Car:</string>
+    <string name="volume_intensity">Volume Intensity:</string>
+
+</resources>

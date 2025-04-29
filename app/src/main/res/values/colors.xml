@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5A1A46</color>  <!-- Darkest Black -->
+    <color name="colorPrimaryVariant">#2B1722</color>  <!-- Dark Purple -->
+    <color name="colorOnPrimary">#EDEDED</color>  <!-- Light Text for contrast -->
+
+    <color name="colorSecondary">#1A1718</color>  <!-- Deep Purple -->
+    <color name="colorSecondaryVariant">#913E66</color>  <!-- Muted Pinkish Purple -->
+    <color name="colorOnSecondary">#FFFFFF</color>  <!-- White for contrast -->
+
+    <color name="background">#100F10</color>  <!-- Dark Background -->
+    <color name="surface">#913E66</color>  <!-- Slightly lighter surface color -->
+    <color name="colorOnBackground">#EDEDED</color>  <!-- Light text on background -->
+    <color name="colorOnSurface">#EDEDED</color>  <!-- Light text on surfaces -->
+</resources>
