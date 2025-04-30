@@ -78,20 +78,25 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void stopSound() {
-        // Stop the sound cue when the splash screen is about to transition
-        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-            mediaPlayer.stop();
-            mediaPlayer.release();  // Release resources after sound has stopped
+        if (mediaPlayer != null) {
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.stop();
+            }
+            mediaPlayer.release();
+            mediaPlayer = null; // Prevent reuse
         }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        // Stop and release the MediaPlayer if the activity is paused
-        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-            mediaPlayer.stop();
+        if (mediaPlayer != null) {
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.stop();
+            }
             mediaPlayer.release();
+            mediaPlayer = null; // Prevent reuse
         }
     }
+
 }
