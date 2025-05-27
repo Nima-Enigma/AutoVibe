@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -57,7 +58,7 @@ public class SplashActivity extends AppCompatActivity {
             // Transition to MainActivity after fade-out
             new Handler().postDelayed(() -> {
                 stopSound();
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, MQTTConnectActivity.class));
                 finish();
             }, 500); // Delay to ensure fade-out completes
         }, 4000); // Splash screen duration

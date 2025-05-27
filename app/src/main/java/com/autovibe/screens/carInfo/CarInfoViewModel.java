@@ -1,4 +1,4 @@
-package com.autovibe.ui.carInfo;
+package com.autovibe.screens.carInfo;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

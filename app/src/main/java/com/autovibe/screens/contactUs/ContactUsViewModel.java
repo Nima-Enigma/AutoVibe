@@ -1,4 +1,4 @@
-package com.autovibe.ui.contactUs;
+package com.autovibe.screens.contactUs;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
