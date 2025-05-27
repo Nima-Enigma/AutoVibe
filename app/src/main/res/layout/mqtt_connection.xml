@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="16dp"
+    android:fillViewport="true"
+    tools:context=".ui.mqtt.MqttConnectFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Autovibe"
+            android:textSize="22sp"
+            android:textStyle="bold"
+
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MQTT Connection"
+            android:textSize="22sp"
+            android:textStyle="bold"
+
+            android:textColor="@color/colorOnPrimary"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:textColorHint="@color/colorSecondaryVariant"
+            android:id="@+id/editTextBrokerUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Broker URL (e.g., tcp://broker.hivemq.com)"
+            android:inputType="textUri"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editTextPort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Port (e.g., 1883)"
+            android:inputType="number"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColorHint="@color/colorSecondaryVariant"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editTextClientId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Client ID"
+            android:inputType="text"
+            android:background="@drawable/edit_text_background"
+            android:textColorHint="@color/colorSecondaryVariant"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColorHint="@color/colorSecondaryVariant"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:background="@drawable/edit_text_background"
+            android:padding="12dp"
+            android:textColorHint="@color/colorSecondaryVariant"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/buttonConnect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/colorOnPrimary"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>
