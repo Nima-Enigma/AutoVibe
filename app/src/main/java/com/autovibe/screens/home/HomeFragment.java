@@ -18,6 +18,7 @@ import com.autovibe.MqttHandler;
 import com.autovibe.R;
 import com.autovibe.databinding.FragmentHomeBinding;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class HomeFragment extends Fragment {
@@ -91,13 +92,13 @@ public class HomeFragment extends Fragment {
     private void subscribeToRpm() {
         if (mqttHandler != null) {
             mqttHandler.setMessageCallback((topic, message) -> {
-                if ("car/rpm".equals(topic)) {
-                    try {
-                        int rpm = Integer.parseInt(new String(message.getPayload()));
-                        requireActivity().runOnUiThread(() -> homeViewModel.setRpm(rpm));
-                    } catch (NumberFormatException e) {
-                        e.printStackTrace();
-                    }
+                try {
+                    String payload = new String(message.getPayload());
+                    JSONObject json = new JSONObject(payload);
+                    int rpm = json.getInt("rpm");
+                    requireActivity().runOnUiThread(() -> homeViewModel.setRpm(rpm));
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
             });
             mqttHandler.subscribe("car/rpm");
@@ -114,10 +115,10 @@ public class HomeFragment extends Fragment {
 
         try {
             JSONObject json = new JSONObject();
-            json.put("volumeLevel", volume);
-            json.put("carSelection", car);
+            json.put("volume_Level", volume);
+            json.put("chosen_car", car);
 
-            mqttHandler.publish("car/settings", json.toString());
+            mqttHandler.publish("car/control", json.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

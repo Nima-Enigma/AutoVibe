@@ -49,7 +49,7 @@ public class MQTTConnectActivity extends AppCompatActivity {
         MqttHandler mqttHandler = new MqttHandler();
 
         try {
-            mqttHandler.connect(serverUri, clientId);
+            mqttHandler.connect(serverUri, clientId, username, password);
 
             // Pass mqttHandler instance via a singleton or shared class
             ConnectionHolder.setHandler(mqttHandler);

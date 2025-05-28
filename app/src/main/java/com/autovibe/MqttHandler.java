@@ -15,16 +15,23 @@ public class MqttHandler {
     private MqttClient client;
     private BiConsumer<String, MqttMessage> messageCallback;
 
-    public void connect(String brokerUrl, String clientId) throws MqttException {
+    public void connect(String brokerUrl, String clientId, String username, String password) throws MqttException {
         MemoryPersistence persistence = new MemoryPersistence();
         client = new MqttClient(brokerUrl, clientId, persistence);
 
         MqttConnectOptions connectOptions = new MqttConnectOptions();
         connectOptions.setCleanSession(true);
 
+        // 🔐 Add these two lines for username and password
+        if (username != null && !username.isEmpty()) {
+            connectOptions.setUserName(username);
+        }
+        if (password != null && !password.isEmpty()) {
+            connectOptions.setPassword(password.toCharArray());
+        }
+
         client.connect(connectOptions);
 
-        // Set internal message callback
         client.setCallback(new MqttCallback() {
             @Override
             public void connectionLost(Throwable cause) {
@@ -40,10 +47,11 @@ public class MqttHandler {
 
             @Override
             public void deliveryComplete(IMqttDeliveryToken token) {
-                // You can log this if you want
+                // Optional logging
             }
         });
     }
+
 
     public void setMessageCallback(BiConsumer<String, MqttMessage> callback) {
         this.messageCallback = callback;
