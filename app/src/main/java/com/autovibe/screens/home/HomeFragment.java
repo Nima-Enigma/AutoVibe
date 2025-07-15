@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
     private SeekBar volumeSeekBar;
     private Spinner carSelectionSpinner;
 
-    private final String[] carList = {"Tesla Model S", "BMW M3", "Nissan GTR", "Ford Mustang", "Lamborghini Huracan"};
+    private final String[] carList = {"911 GT3 RS", "Nissan GTR", "Ford Mustang 69'"};
     private HomeViewModel homeViewModel;
     private MqttHandler mqttHandler;
 
@@ -101,7 +101,7 @@ public class HomeFragment extends Fragment {
                     e.printStackTrace();
                 }
             });
-            mqttHandler.subscribe("car/rpm");
+            mqttHandler.subscribe("car{" + mqttHandler.getClient().getClientId() + "}/rpm");
         }
     }
 
@@ -118,7 +118,7 @@ public class HomeFragment extends Fragment {
             json.put("volume_Level", volume);
             json.put("chosen_car", car);
 
-            mqttHandler.publish("car/control", json.toString());
+            mqttHandler.publish("car{" + mqttHandler.getClient().getClientId() + "}/control", json.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

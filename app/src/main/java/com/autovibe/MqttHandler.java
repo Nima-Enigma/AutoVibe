@@ -12,6 +12,10 @@ import java.util.function.BiConsumer;
 
 public class MqttHandler {
 
+    public MqttClient getClient() {
+        return client;
+    }
+
     private MqttClient client;
     private BiConsumer<String, MqttMessage> messageCallback;
 

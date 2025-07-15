@@ -108,7 +108,7 @@
                         android:textColor="@color/colorOnPrimary"/>
 
                     <TextView
-                        android:id="@+id/engine_type"
+                        android:id="@+id/carEngineType"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Electric"
@@ -149,13 +149,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Year"
+                        android:text="Release Year"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorOnSurface"/>
 
                     <TextView
-                        android:id="@+id/car_year"
+                        android:id="@+id/carReleaseYear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2023"
@@ -196,13 +196,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Average RPM"
+                        android:text="Max RPM"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/colorOnSurface"/>
 
                     <TextView
-                        android:id="@+id/car_avg_rpm"
+                        android:id="@+id/carMaxRpm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3200 RPM"
