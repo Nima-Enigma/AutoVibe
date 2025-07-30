@@ -1,0 +1,20 @@
+{
+  "911 GT3 RS": {
+    "low": "/911_low.wav",
+    "high": "/911_high.wav",
+    "base_rpm": 1000,
+    "volume": 1.0
+  },
+  "Nissan GTR": {
+    "low": "/gtr_low.wav",
+    "high": "/gtr_high.wav",
+    "base_rpm": 3200,
+    "volume": 2.0
+  },
+  "Ford Mustang 69'": {
+    "low": "/mustang_low.wav",
+    "high": "/mustang_high.wav",
+    "base_rpm": 5300,
+    "volume": 1.5
+  }
+}
